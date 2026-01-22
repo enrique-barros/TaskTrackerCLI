@@ -1,10 +1,12 @@
 package com.tasktracker;
 
+import com.tasktracker.cli.ConsoleInterface;
 import com.tasktracker.service.TaskService;
 
 public class Main {
     public static void main(String[] args) {
         TaskService service = new TaskService();
+        new ConsoleInterface().runMenu();
 
         if (args.length == 0) {
             System.out.println("No command provided.");
