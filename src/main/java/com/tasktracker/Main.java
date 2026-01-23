@@ -1,3 +1,10 @@
+/**
+ * Entry point for the Task Tracker CLI application.
+ * Initializes and runs the console interface.
+ *
+ * @author Enrique Barros Fernández
+ */
+
 package com.tasktracker;
 
 import com.tasktracker.cli.ConsoleInterface;

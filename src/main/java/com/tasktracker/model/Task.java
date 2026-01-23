@@ -1,17 +1,21 @@
+/**
+ * Represents a task with a unique ID, description, status, and timestamps.
+ * Provides methods to update task details and change its state.
+ */
+
+
 package com.tasktracker.model;
 
 import java.time.LocalDateTime;
 
 public class Task {
 
-    // Attributes
     private final int id;
     private String description;
     private String status;
     private final LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
-    // Constructor
     public Task(int id, String description, String status, LocalDateTime createdAt, LocalDateTime updatedAt) {
         this.id = id;
         this.description = description;
@@ -20,7 +24,6 @@ public class Task {
         this.updatedAt = updatedAt;
     }
 
-    // Getters
     public int getId() {
         return id;
     }
@@ -41,7 +44,6 @@ public class Task {
         return updatedAt;
     }
 
-    // Setters
     public void setDescription(String description) {
         this.description = description;
     }
@@ -54,7 +56,6 @@ public class Task {
         this.updatedAt = updatedAt;
     }
 
-    // State methods
     public void markInProgress() {
         this.status = "in-progress";
         this.updatedAt = java.time.LocalDateTime.now();

@@ -1,3 +1,9 @@
+/**
+ * Utility class for reading and writing tasks to a JSON file.
+ * Handles JSON serialization and deserialization of Task objects.
+ */
+
+
 package com.tasktracker.util;
 
 import com.tasktracker.model.Task;
@@ -34,7 +40,6 @@ public class JsonUtil {
                 return tasks;
             }
 
-            // Remove brackets and split entries
             content = content.substring(1, content.length() - 1);
             String[] entries = content.split("},\\{");
 

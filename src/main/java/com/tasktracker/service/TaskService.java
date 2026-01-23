@@ -1,3 +1,8 @@
+/**
+ * Service class responsible for managing tasks in memory.
+ * Supports adding, updating, deleting, marking tasks, and retrieving tasks by status.
+ */
+
 package com.tasktracker.service;
 
 import com.tasktracker.model.Task;
@@ -9,16 +14,13 @@ import java.time.LocalDateTime;
 
 public class TaskService {
 
-    // Final list storing tasks in memory
     private final List<Task> tasks = new ArrayList<>();
 
-    // Constructor loads tasks from JSON
     public TaskService() {
         JsonUtil.initializeFile();
         tasks.addAll((List<Task>) JsonUtil.readTasks());
     }
 
-    // Generate next unique ID
     private int generateNextId() {
         int maxId = 0;
         for (Task task : tasks) {
@@ -29,7 +31,6 @@ public class TaskService {
         return maxId + 1;
     }
 
-    // Find task by ID
     private Task findTaskById(int id) {
         for (Task task : tasks) {
             if (task.getId() == id) {
@@ -39,7 +40,6 @@ public class TaskService {
         return null;
     }
 
-    // Add a new task
     public Task addTask(String description) {
         int id = generateNextId();
         Task task = new Task(id, description, "todo", LocalDateTime.now(), LocalDateTime.now());
@@ -49,7 +49,6 @@ public class TaskService {
     }
 
 
-    // Update task description
     public void updateTask(int id, String newDescription) {
         Task task = findTaskById(id);
         if (task != null) {
@@ -59,7 +58,6 @@ public class TaskService {
         }
     }
 
-    // Delete a task
     public void deleteTask(int id) {
         Task task = findTaskById(id);
         if (task != null) {
@@ -68,7 +66,6 @@ public class TaskService {
         }
     }
 
-    // Mark task in progress
     public void markInProgress(int id) {
         Task task = findTaskById(id);
         if (task != null) {
@@ -77,7 +74,6 @@ public class TaskService {
         }
     }
 
-    // Mark task done
     public void markDone(int id) {
         Task task = findTaskById(id);
         if (task != null) {
@@ -86,12 +82,10 @@ public class TaskService {
         }
     }
 
-    // List all tasks
     public List<Task> getAllTasks() {
         return new ArrayList<>(tasks);
     }
 
-    // List tasks by status
     public List<Task> getTasksByStatus(String status) {
         List<Task> filtered = new ArrayList<>();
         for (Task task : tasks) {

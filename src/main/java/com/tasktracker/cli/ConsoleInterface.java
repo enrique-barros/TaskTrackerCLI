@@ -1,3 +1,9 @@
+/**
+ * Command-line interface (CLI) for interacting with the Task Tracker application.
+ * Provides a menu-driven interface for task management, including adding,
+ * updating, deleting, marking, and listing tasks.
+ */
+
 package com.tasktracker.cli;
 
 import com.tasktracker.model.Task;
@@ -12,7 +18,6 @@ public class ConsoleInterface {
     private final TaskService taskService;
     private final Scanner scanner;
 
-    // ANSI escape codes for colors
     private static final String RESET = "\u001B[0m";
     private static final String RED = "\u001B[31m";
     private static final String GREEN = "\u001B[32m";
@@ -81,7 +86,6 @@ public class ConsoleInterface {
         String desc = scanner.nextLine().trim();
         taskService.updateTask(id, desc);
 
-        // Show the updated task
         Task task = taskService.getAllTasks().stream()
                 .filter(t -> t.getId() == id)
                 .findFirst()
@@ -105,7 +109,6 @@ public class ConsoleInterface {
         int id = Integer.parseInt(scanner.nextLine().trim());
         taskService.markInProgress(id);
 
-        // Show the updated task
         Task task = taskService.getAllTasks().stream()
                 .filter(t -> t.getId() == id)
                 .findFirst()
@@ -122,7 +125,6 @@ public class ConsoleInterface {
         int id = Integer.parseInt(scanner.nextLine().trim());
         taskService.markDone(id);
 
-        // Show the updated task
         Task task = taskService.getAllTasks().stream()
                 .filter(t -> t.getId() == id)
                 .findFirst()
