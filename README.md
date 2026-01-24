@@ -115,5 +115,5 @@ If you want to contribute to Task Tracker CLI, follow these steps:
 
 ## Project Info
 
-- Repository URL: [https://github.com/enrique-barros/TaskTrackerCLI](https://github.com/enrique-barros/TaskTrackerCLI)
+- Project URL: [https://roadmap.sh/projects/task-tracker](https://roadmap.sh/projects/task-tracker)
 - License: MIT
