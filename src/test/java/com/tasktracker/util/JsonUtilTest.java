@@ -22,7 +22,6 @@ class JsonUtilTest {
 
     @AfterEach
     void cleanup() throws Exception {
-        // Clear the file after each test
         Files.writeString(new File(TEST_FILE).toPath(), "[]");
     }
 

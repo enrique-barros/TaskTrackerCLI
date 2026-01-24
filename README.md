@@ -7,7 +7,8 @@
 - Add, update, and delete tasks
 - Mark tasks as "in-progress" or "done"
 - List all tasks or filter tasks by status (`todo`, `in-progress`, `done`)
-- Tasks are stored in a JSON file for persistence
+- Tasks are stored in a JSON file (`tasks.json`) for persistence  
+  **Note:** Descriptions containing commas may cause issues due to simple JSON parsing.
 - Includes automated tests for key functionality
 
 ## Task Properties
@@ -111,11 +112,6 @@ If you want to contribute to Task Tracker CLI, follow these steps:
 # Task Tracker CLI
 
 **Task Tracker** is a command-line application built in **Java** to help you track and manage your tasks efficiently.
-
-For more details, see:
-
-- [Architecture](ARCHITECTURE.md) 
-- [Testing](TESTING.md)
 
 ## License
 
