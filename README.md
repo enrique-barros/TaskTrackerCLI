@@ -113,6 +113,7 @@ If you want to contribute to Task Tracker CLI, follow these steps:
 
 **Task Tracker** is a command-line application built in **Java** to help you track and manage your tasks efficiently.
 
-## License
+## Project Info
 
-This project is licensed under the MIT License.
+- Repository URL: [https://github.com/enrique-barros/TaskTrackerCLI](https://github.com/enrique-barros/TaskTrackerCLI)
+- License: MIT
